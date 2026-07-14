@@ -1,0 +1,3 @@
+import { ReactNode, useEffect } from 'react';
+import styles from './Modal.module.css';
+export default function Modal({open,onClose,children,label='대화상자'}:{open:boolean;onClose:()=>void;children:ReactNode;label?:string}) { useEffect(()=>{const fn=(e:KeyboardEvent)=>e.key==='Escape'&&onClose();document.addEventListener('keydown',fn);return()=>document.removeEventListener('keydown',fn)},[onClose]); if(!open)return null; return <div className={styles.backdrop} onMouseDown={e=>e.target===e.currentTarget&&onClose()}><section className={styles.modal} role="dialog" aria-modal="true" aria-label={label}>{children}</section></div>; }

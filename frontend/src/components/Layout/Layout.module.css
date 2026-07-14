@@ -1,0 +1,19 @@
+.layout {
+  min-height: 100vh;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  padding: 30px 24px;
+}
+
+@media (max-width: 1260px) {
+  .main { margin-left: 72px; }
+}
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    padding: 16px 0 74px;
+  }
+}

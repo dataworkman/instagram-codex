@@ -1,0 +1,23 @@
+.followBtn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  min-width: 90px;
+}
+
+.following {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.notFollowing {
+  background: var(--color-primary);
+  color: white;
+}
+
+.followBtn:disabled {
+  opacity: 0.6;
+}

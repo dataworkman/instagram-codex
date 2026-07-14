@@ -1,0 +1,94 @@
+.authPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.authBox {
+  width: 100%;
+  max-width: 350px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 1px;
+  padding: 40px 40px 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Segoe UI', cursive;
+  font-size: 42px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.submitBtn {
+  margin-top: 8px;
+  padding: 10px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+}
+
+.errorAlert {
+  margin: 4px 0;
+  padding: 10px 12px;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  background: #fff1f2;
+  color: #c62828;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.signupBox {
+  margin-top: 10px;
+  padding: 20px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.signupBox a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.demo {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}

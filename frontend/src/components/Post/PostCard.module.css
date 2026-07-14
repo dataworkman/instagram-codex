@@ -1,0 +1,106 @@
+.card {
+  background: var(--color-white);
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+}
+.dot,.headerTime{color:#737373;font-size:14px}.more{margin-left:auto;border:0;background:none;width:28px}.more svg{width:22px}
+
+.username {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: #000;
+  cursor: pointer;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heartOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.heartOverlay svg{width:92px;height:92px;filter:drop-shadow(0 1px 5px rgba(0,0,0,.35));animation:heartBurst .75s ease}
+@keyframes heartBurst{0%{transform:scale(0)}35%{transform:scale(1.15)}70%{transform:scale(.95)}100%{transform:scale(1)}}
+
+.heartOverlay.show {
+  opacity: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 2px 8px;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  display:flex;
+  padding: 0;
+  line-height: 1;
+}
+.actionBtn svg{width:25px;height:25px}.actionBtn:hover{opacity:.55}.save{margin-left:auto}
+
+.liked {
+  color: var(--color-danger);
+}
+
+.body {
+  padding: 0 2px 16px;
+}
+
+.likes {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.caption {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.captionUser {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.viewComments {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.time {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+@media(max-width:768px){.header{padding-left:12px;padding-right:12px}.actions,.body{padding-left:12px;padding-right:12px}.imageWrap{aspect-ratio:1}.card{margin-bottom:12px}}
