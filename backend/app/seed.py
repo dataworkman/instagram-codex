@@ -1,4 +1,5 @@
 import io
+import os
 
 from PIL import Image
 from sqlalchemy.orm import Session
@@ -107,6 +108,12 @@ def seed_database():
 
 
 def ensure_admin_user():
+    admin_password = os.getenv("ADMIN_PASSWORD")
+    if not admin_password and os.getenv("SEED_DEMO_DATA", "true").lower() in {"1", "true", "yes"}:
+        admin_password = "pass123"
+    if not admin_password:
+        return
+
     db: Session = SessionLocal()
     try:
         admin = db.query(User).filter(User.username == "admin").first()
@@ -121,7 +128,7 @@ def ensure_admin_user():
             db.add(admin)
         else:
             admin.is_admin = True
-            admin.password_hash = get_password_hash("pass123")
+        admin.password_hash = get_password_hash(admin_password)
         db.commit()
     finally:
         db.close()

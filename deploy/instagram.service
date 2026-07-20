@@ -1,0 +1,23 @@
+[Unit]
+Description=Instagram Codex FastAPI backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/var/www/instagram/backend
+EnvironmentFile=/etc/instagram-codex.env
+ExecStart=/var/www/instagram/backend/.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --proxy-headers --forwarded-allow-ips=127.0.0.1
+Restart=on-failure
+RestartSec=3
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/www/instagram/backend
+
+[Install]
+WantedBy=multi-user.target
